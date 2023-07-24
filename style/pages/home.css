@@ -1,0 +1,42 @@
+@keyframes blur {
+	0% {
+		filter: blur(30px);
+		transform: translateY(50px);
+		transform: scale(1.5);
+	}
+	100% {
+		filter: blur(0);
+		transform: translateY(0px);
+		transform: scale(1);
+	}
+}
+
+header {
+	height: 100dvh;
+	height: 100vh;
+	background-image: url('/images/topView.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-blend-mode: exclusion;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+#shopName {
+	margin: 0;
+	font-family: 'Tangerine', cursive, "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro", "メイリオ", Meiryo, Osaka;
+	font-weight: 400;
+	font-size: 300%;
+	text-align: center;
+	color: #fff;
+	text-shadow: 0 0 10px #fff,0 0 15px #fff;
+	padding: 50px;
+	opacity: 0;
+}
+#shopName.isInView {
+	opacity: 1;
+	animation-name: blur;
+	animation-duration: 1.5s;
+	/* animation-fill-mode: both; */
+}
